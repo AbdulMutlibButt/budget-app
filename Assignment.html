@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUDGET APP</title>
+  <link rel="stylesheet" href="Assignment.css">
+</head>
+
+<body>
+  <h1 class="nav">BUDGET APP</h1>
+
+  <div class="container">
+    <div>
+
+      <h2 id="totalBudget">Total budget: <span id="budget"></span></h2>
+    </div>
+
+    <div id="category-form">
+      <h2>Add Category</h2>
+      <div class="form-group">
+        <label for="category-name">Category Name:</label>
+        <input type="text" id="category-name" placeholder="Enter category name" />
+        <button class="catBtn" style="margin-top: 10px" onclick="Category()">
+          Add Category
+        </button>
+        <p id="category-error" class="error"></p>
+      </div>
+    </div>
+
+    <div id="budget-form">
+      <h2>Add Total Budget</h2>
+      <div class="form-group">
+        <label for="total-budget">Total Budget:</label>
+        <input type="number" id="total-budget" placeholder="Enter total budget" />
+        <button class="Budbtn" onclick="addBudget()">
+          ADD BUDGET
+        </button>
+        <p id="budget-error" class="error"></p>
+      </div>
+    </div>
+
+    <div id="expense-form">
+      <h2>ADD Expense</h2>
+      <div class="form-group">
+        <label for="expense-date">Date:</label>
+        <input type="date" id="expense-date">
+      </div>
+      <div class="form-group">
+        <label for="expense-category">Category:</label>
+        <select id="expense-category"></select>
+      </div>
+      <div class="form-group">
+        <label for="expense-amount">Amount:</label>
+        <input type="number" id="expense-amount" placeholder="Enter expense amount">
+        <button class="" onclick="addExpense()">Add Expense</button>
+        <p id="expense-error" class="error"></p>
+      </div>
+
+    </div>
+
+
+    <div id="expense-table">
+      <h2>Expenses</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="expense-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="Assignment.js"></script>
+
+</body>
+
+</html>

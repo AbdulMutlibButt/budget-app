@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calculater</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        header {
+            background-color: darkgoldenrod;
+            width: 100%;
+
+            padding: 20PX;
+
+        }
+        .container {
+            border: solid 4px black;
+            text-align: center;
+            margin-top: 15%;
+            width: 25%;
+            margin-left: 40%;
+            border-radius: 9px;
+            background-color: black;
+        }
+        table {
+            margin: auto;
+        }
+        input {
+            border-radius: 10px;
+            font-size: 34px;
+            margin: 16px;
+        }
+        button {
+            border: solid 2px black;
+            border-radius: 9px;
+            font-size: 23px;
+            width: 70px;
+            height: 40px;
+        }
+        .calculator {
+            display: inline-block;
+            border: 9px;
+            background-color: aqua;
+        }
+        .container input {
+            width: 90%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CALCULATER</h1>
+    </header>
+    <div class="container">
+        <input type="text" name="screen" id="input">
+        <div class="calculator">
+            <table>
+                <tr>
+                    <td><button onclick="brac()">(</button></td>
+                    <td><button onclick="brack()">)</button></td>
+                    <td><button onclick="clears()">C</button></td>
+                    <td><button onclick="get('%')">%</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="get('9')">9</button></td>
+                    <td><button onclick="get('8')">8</button></td>
+                    <td><button onclick="get('7')">7</button></td>
+                    <td><button onclick="get('6')">6</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="get('5')">5</button></td>
+                    <td><button onclick="get('4')">4</button></td>
+                    <td><button onclick="get('3')">3</button></td>
+                    <td><button onclick="get('2')">2</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="get('1')">1</button></td>
+                    <td><button onclick="get('0')">0</button></td>
+                    <td><button onclick="get('/')">/</button></td>
+                    <td><button onclick="get('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="get('-')">-</button></td>
+                    <td><button onclick="get('+')">+</button></td>
+                    <td><button onclick="calculate()">=</button></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            const input = document.getElementById("input");
+            function get(num) {
+                input.value += num;
+                console.log("--->>>" + num);
+            }
+            function calculate() {
+                var p = document.getElementById("input").value;
+                var q = eval(p);
+                document.getElementById("input").value = q;
+            }
+            function clears() {
+                document.getElementById("input").value = "";
+            }
+            function brac() {
+                document.getElementById("input").value += "(";
+            }
+            function brack() {
+                document.getElementById("input").value += ")";
+            }
+        </script>
+</body>
+</html>
